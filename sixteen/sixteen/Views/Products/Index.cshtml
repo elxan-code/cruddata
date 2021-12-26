@@ -1,0 +1,40 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="filters">
+                    <ul>
+                        <li class="active" data-filter="*">All Products</li>
+                        <li data-filter=".des">Featured</li>
+                        <li data-filter=".dev">Flash Deals</li>
+                        <li data-filter=".gra">Last Minute</li>
+                    </ul>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4 all gra">
+                    <div class="product-item">
+                        <a href="#"><img src="assets/images/product_03.jpg" alt=""></a>
+                        <div class="down-content">
+                            <a asp-controller="Shop" asp-action="Addtocard" asp-route-id="@item.Id"><h4>@item.Name</h4></a>
+                            <h6>$32.50</h6>
+                            <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                            <ul class="stars">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
+                            <span>Reviews (36)</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
